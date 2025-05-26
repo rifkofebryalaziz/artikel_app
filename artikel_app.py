@@ -14,11 +14,13 @@ from collections import Counter
 # Tambahan untuk stopword dari Sastrawi
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
-# Koneksi ke Mongodb
+# Koneksi ke MongoDB Atlas langsung di dalam kode
 @st.cache_data
 def load_data():
     try:
-        client = MongoClient('mongodb://localhost:27017/', serverSelectionTimeoutMS=5000)
+        # Ganti URI ini sesuai akun MongoDB Atlas milikmu
+        MONGO_URI = "mongodb+srv://rifkofebryalaziz30:phb_2022_rifkofebryalaziz_TI@cluster0.qotuptw.mongodb.net/detik?retryWrites=true&w=majority"
+        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
         client.server_info()
         db = client["detik"]
         collection = db["baskett_articless"]

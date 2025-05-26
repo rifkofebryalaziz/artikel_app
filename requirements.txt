@@ -1,8 +1,7 @@
 streamlit
-Flask
 pymongo
 matplotlib
-wordcloud
 seaborn
 pandas
+wordcloud
 Sastrawi
