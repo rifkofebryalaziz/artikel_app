@@ -147,6 +147,6 @@ st.markdown("<br><br>", unsafe_allow_html=True)
 st.subheader("Pencarian Artikel")
 search_query = st.text_input("Masukkan kata kunci untuk mencari berita:")
 if search_query:
-    hasil_cari = df[df['judul'].str.contains(search_query, case=False, na=False)]
+    hasil_cari = df[df['judul', 'isi'].str.contains(search_query, case=False, na=False)]
     st.write(f"Ditemukan {len(hasil_cari)} artikel:")
     st.dataframe(hasil_cari[['judul', 'isi', 'tanggal', 'link']].fillna('-'), use_container_width=True)
